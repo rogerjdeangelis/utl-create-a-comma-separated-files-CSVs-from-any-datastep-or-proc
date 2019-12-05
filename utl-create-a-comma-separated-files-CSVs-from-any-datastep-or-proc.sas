@@ -18,7 +18,7 @@ github
 https://tinyurl.com/upcxoyq                                                                                         
 https://github.com/rogerjdeangelis/utl-create-a-comma-separated-files-CSVs-from-any-datastep-or-proc                
                                                                                                                     
- *_                   _                                                                                             
+*_                   _                                                                                             
 (_)_ __  _ __  _   _| |_                                                                                            
 | | '_ \| '_ \| | | | __|                                                                                           
 | | | | | |_) | |_| | |_                                                                                            
@@ -40,7 +40,7 @@ Obs    NAME       SEX    AGE
   4    James       M      12                                                                                        
  ...                                                                                                                
                                                                                                                     
-*                      _               _                                                                            
+*             _               _                                                                            
    ___  _   _| |_ _ __  _   _| |_                                                                                   
   / _ \| | | | __| '_ \| | | | __|                                                                                  
  | (_) | |_| | |_| |_) | |_| | |_                                                                                   
