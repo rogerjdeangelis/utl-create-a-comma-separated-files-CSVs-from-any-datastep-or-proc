@@ -1,5 +1,5 @@
 # utl-create-a-comma-separated-files-CSVs-from-any-datastep-or-proc
-    Create comma separated files CSVs from any datastep or proc                                                                         
+     Create comma separated files CSVs from any datastep or proc                                                                         
                                                                                                                                         
        I am not a fan of 'proc export' see                                                                                              
                                                                                                                                         
@@ -21,6 +21,9 @@
            c. ds2csv SAS macro                                                                                                          
               https://tinyurl.com/y5xnhfbz                                                                                              
                                                                                                                                         
+           d. Without quotes ( nice example of vnext )                                                                                  
+              by datanull_                                                                                                              
+              datanull@GMAIL.COM                                                                                                        
                                                                                                                                         
     github                                                                                                                              
     https://tinyurl.com/upcxoyq                                                                                                         
@@ -141,4 +144,47 @@
     ;                                                                                                                                   
                                                                                                                                         
     %ds2csv(data=work.tab,RUNMODE=B,csvfILE=d:/csv/tabds2csv.csv,labels=N);                                                             
-                                               
+                                                                                                                                        
+    *         _ _   _                 _                       _                                                                         
+    __      _(_) |_| |__   ___  _   _| |_    __ _ _   _  ___ | |_ ___  ___                                                              
+    \ \ /\ / / | __| '_ \ / _ \| | | | __|  / _` | | | |/ _ \| __/ _ \/ __|                                                             
+     \ V  V /| | |_| | | | (_) | |_| | |_  | (_| | |_| | (_) | ||  __/\__ \                                                             
+      \_/\_/ |_|\__|_| |_|\___/ \__,_|\__|  \__, |\__,_|\___/ \__\___||___/                                                             
+                                               |_|                                                                                      
+    ;                                                                                                                                   
+                                                                                                                                        
+    * Recent nice example but does not quote char vars and;                                                                             
+    * may not handle quotes or commas within quotes;                                                                                    
+                                                                                                                                        
+    * nice example of vnext;                                                                                                            
+                                                                                                                                        
+    * by datanull_;                                                                                                                     
+    * datanull@GMAIL.COM;                                                                                                               
+                                                                                                                                        
+    filename FT66F001 'file-name.csv' lrecl=100000;                                                                                     
+    data _null_;                                                                                                                        
+       set sashelp.class;                                                                                                               
+       file FT66F001 dsd;                                                                                                               
+       if _n_ eq 1 then link names;                                                                                                     
+       put (_all_)(:);                                                                                                                  
+       return;                                                                                                                          
+     names:                                                                                                                             
+       length _name_ $32;                                                                                                               
+       do while(1);                                                                                                                     
+          call vnext(_name_);                                                                                                           
+          if upcase(_name_) eq '_NAME_' then leave;                                                                                     
+          put _name_ : @;                                                                                                               
+          end;                                                                                                                          
+       put;                                                                                                                             
+       return;                                                                                                                          
+    run;                                                                                                                                
+                                                                                                                                        
+    OUTPUT                                                                                                                              
+    =====                                                                                                                               
+                                                                                                                                        
+    NAME,SEX,AGE,HEIGHT,WEIGHT                                                                                                          
+    Alfred,M,14,69,112.5                                                                                                                
+    Alice,F,13,56.5,84                                                                                                                  
+    Barbara,F,13,65.3,98                                                                                                                
+    Carol,F,14,62.8,102.5                                                                                                               
+                                                                                                                                        
