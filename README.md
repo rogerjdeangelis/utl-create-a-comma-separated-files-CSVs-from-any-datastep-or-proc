@@ -7,10 +7,6 @@
               download csvtags.tpl
               https://support.sas.com/rnd/base/ods/odsmarkup/
 
-              Solution on SAS-L  by
-              Tom Robinson
-              barefootguru@gmail.com
-
            b. Dosubl solution
 
            c. ds2csv SAS macro
