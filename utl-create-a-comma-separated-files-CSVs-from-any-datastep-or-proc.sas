@@ -6,11 +6,7 @@ Create comma separated files CSVs from any datastep or proc
 
        a. Using tagset Simplecsv
           download csvtags.tpl
-          https://support.sas.com/rnd/base/ods/odsmarkup/
-
-          Solution on SAS-L  by
-          Tom Robinson
-          barefootguru@gmail.com
+          https://support.sas.com/rnd/base/ods/odsmarkup
 
        b. Dosubl solution
 
